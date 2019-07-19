@@ -1,0 +1,25 @@
+<span class="dropdown btn-group pull-right" uib-dropdown="">
+	<a role="button" class="btn btn-default dropdown-toggle btn-sm"	uib-dropdown-toggle=""> Filter ({{statsCtrl.limit}}) <b	class="caret"></b></a>
+	<ul class="dropdown-menu" role="menu">
+		<li><a ui-sref="charts({productId: statsCtrl.productId, type: statsCtrl.type, limit: 10})">10</a></li>
+		<li><a ui-sref="charts({productId: statsCtrl.productId, type: statsCtrl.type, limit: 30})">30</a></li>
+		<li><a ui-sref="charts({productId: statsCtrl.productId, type: statsCtrl.type, limit: 50})">50</a></li>
+		<li class="divider"></li>
+		<li><a ui-sref="charts({productId: statsCtrl.productId, type: statsCtrl.type, limit: 'ALL'})">All</a></li>
+	</ul>
+</span>
+<span class="dropdown btn-group pull-right" uib-dropdown="">
+	<a role="button" class="btn btn-default dropdown-toggle btn-sm" uib-dropdown-toggle=""> Chart Type ({{statsCtrl.type}}) <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+		<li><a ui-sref="charts({productId: statsCtrl.productId, type: 'ColumnChart', limit: statsCtrl.limit})">Column Chart</a></li>
+		<li><a ui-sref="charts({productId: statsCtrl.productId, type: 'AreaChart', limit: statsCtrl.limit})">Area Chart</a></li>
+	</ul>
+</span>
+
+<ol class="breadcrumb">
+	<li><a ui-sref="products({})">Home</a></li>
+	<li><a ui-sref="products({})">Products</a></li>
+	<li class="active">Statistics</li>
+</ol>
+
+<div google-chart chart="statsCtrl.chartObject" style="height: 600px;"></div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Test Report</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" />
+	<link rel="stylesheet" type="text/css" href="/assets/vendor.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<base href="/" />
+
+</head>
+
+<body ng-app="ccrdb">
+
+	<div ng-show="iCtrl.loadingBarService.reqCount !== 0" ng-controller="IndexController as iCtrl">
+		<div class="modal-backdrop fade in" style="z-index: 1040;"></div>
+		<div class="modal fade in" tabindex="-1" role="dialog" style="z-index: 1050; display: block;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<h3 class="modal-header">Loading</h3>
+					<div class="modal-body">
+						<uib-progressbar value="100" class="progress-striped active"></uib-progressbar>
+						Please Wait ...
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ui-view="header"></div>
+
+	<div class="container">
+		<div ng-show="showJSONFileError" class="alert alert-danger" style="display: none;">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong>Oh snap!</strong> Unable to load local JSON file. (configured report file name: <a href="" id="ReportFileNameLink"><strong><span
+					id="ReportFileName"></span></strong></a>) <br />You can set the report file name in the configuration file (<a href="./js/config.js">/js/config.js</a>)
+		</div>
+		<div ng-show="showDBError" class="alert alert-danger" style="display: none;">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong>Oh snap!</strong> Unable to load DB data using the REST API. (configured server URL: <a href="" id="ServerURLLink"><strong><span
+					id="ServerURL"></span></strong></a>) <br />You can set the server URL in the configuration file (<a href="./js/config.js">/js/config.js</a>)
+		</div>
+		<ui-view></ui-view>
+	</div>
+
+	<script src="/assets/vendor.min.js"></script>
+	<script src="/assets/app.min.js"></script>
+
+</body>
+
+</html>
