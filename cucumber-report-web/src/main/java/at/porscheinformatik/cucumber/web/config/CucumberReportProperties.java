@@ -24,6 +24,10 @@ public class CucumberReportProperties
         return users;
     }
 
+    public void testMethode(){
+        System.out.println("HAll0o");
+    }
+
     public static class Security
     {
         // TODO doc cucumber.report.db.secured

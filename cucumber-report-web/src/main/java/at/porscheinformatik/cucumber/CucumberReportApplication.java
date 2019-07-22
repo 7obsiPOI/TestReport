@@ -17,6 +17,8 @@ public class CucumberReportApplication extends SpringBootServletInitializer
         SpringApplication.run(CucumberReportApplication.class, args);
     }
 
+
+
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
     {
