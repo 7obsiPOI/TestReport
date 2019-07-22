@@ -24,8 +24,8 @@ public class CucumberReportProperties
         return users;
     }
 
-    public void testMethode(){
-        System.out.println("HAll0o");
+    public void testMethode() {
+        System.out.println("OK");
     }
 
     public static class Security
